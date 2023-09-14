@@ -10,6 +10,30 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ * require_tree .
  *= require_self
  */
+
+
+ *, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+}
+
+.btn{
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: #afafb0;
+    border: 2px #000 solid;
+    padding: 1rem;
+    margin: 0 6rem;
+}
+
+.btn a{
+    text-decoration: none;
+    color: #000;
+}
