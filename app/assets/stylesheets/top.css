@@ -1,4 +1,31 @@
-.top_time{
+#top_time{
     text-align: center;
-    font-size: 5rem;
+    font-size: 6rem;
+    margin: 0;
+}
+
+#top_date{
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.frame{
+    border: 1px #000 solid;
+    padding: 1rem;
+    margin: 1px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header_right{
+    text-align: right;
+}
+
+.abstract{
+    text-align: center;
+    margin: 2rem 0;
 }

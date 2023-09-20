@@ -1,8 +1,66 @@
 <%= stylesheet_link_tag 'top', :media => "all" %>
-<div class="content">
-    <p class="top_time">12:34</p>
+<div class="frame">
+
+    <div class="header">
+        <p>電波</p>
+        <p class="header_right">充電</p>
+    </div>
+
+    <p id="top_date"></p>
+    <p id="top_time"></p>
+
+    <p class="abstract">
+    「あのとき、ああすればよかった」<br>
+    「あのとき、なんでああしなかったんだ」<br>
+    そんな後悔は誰にでもあると思います。<br><br>
+
+    もし過去にメールが送れるとしたら・・・<br>
+    それを叶えてくれるのが<br>
+    <b>「Regretメール」</b>（雰囲気だけ）<br><br>
+
+    後悔(Regret)を吐き出して、今のあなたが<br>
+    少しでも楽になれたらいいなと願っています。<br><br>
+    
+    他の方のメールを見るのもよし、<br>
+    気が済むまで過去にメールを送るのもよし、<br>
+    後悔の数だけ、公開されます。<br>
+    </p>
+
 
     <div class=" btn">
         <a href="/new">Regretメール送信画面へ</a>
     </div>
+
 </div>
+
+<script>
+    function set2fig(num) {
+        // 桁数が1桁だったら先頭に0を加えて2桁に調整する
+        var ret;
+        if( num < 10 ) { ret = "0" + num; }
+        else { ret = num; }
+        return ret;
+    }
+    function showClock() {
+        var today=new Date(); 
+
+        //年・月・日・曜日を取得
+        var year = today.getFullYear();
+        var month = set2fig(today.getMonth()+1);
+        var week = today.getDay();
+        var day = set2fig(today.getDate());
+        //曜日を変換
+        var week_ja= new Array("日","月","火","水","木","金","土");
+
+        //年・月・日・曜日を書き出す
+        var date = (year+"/"+month+"/"+day+"("+week_ja[week]+")");
+        document.getElementById("top_date").innerHTML = date;
+        // 時刻
+        var nowHour = set2fig( today.getHours() );
+        var nowMin  = set2fig( today.getMinutes() );
+        //var nowSec  = set2fig( today.getSeconds() );
+        var time = nowHour + ":" + nowMin;
+        document.getElementById("top_time").innerHTML = time;
+    }
+        setInterval('showClock()',1000);
+</script>
