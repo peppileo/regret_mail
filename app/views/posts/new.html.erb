@@ -1,7 +1,41 @@
 <%= stylesheet_link_tag 'new', :media => "all" %>
-<div class="content">
+
+<div class="frame">
+
+    <div class="header">
+        <p>電波</p>
+        <p class="header_right">充電</p>
+    </div>
+
+    <div class="form">
+    <%= form_tag("") do %>
+        <div>
+            <p>Regretメール作成</p>
+        </div>
+        
+        <div>
+            <p>宛先：</p>
+            <input name="name" required maxlength="10">
+        </div>
+
+        <div>
+            <span>受信日時：</span>
+            <input type="datetime-local" name="datetime" required>
+        </div>
+
+        <div>
+            <span>件名：</span>
+            <input name="subject" maxlength="10">
+        </div>
+
+        <div>
+            <textarea name="content"></textarea>
+        </div>
+    <% end %>
+    </div>
+
+</div>
 
     <div class=" btn">
-        <a href="/new">送信</a>
+        <input type="submit" value="送信">
     </div>
-</div>

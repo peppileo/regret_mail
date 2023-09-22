@@ -1,0 +1,23 @@
+.form{
+    width: 100%;
+}
+
+.form input, textarea{
+    outline: none;
+    /* border: none; */
+    resize: none;
+
+    
+    display: block;
+    width: 100%;
+}
+
+.form div{
+    display: flex;
+    width: 100%;
+}
+
+.form p{
+    writing-mode: horizontal-tb;
+    /* width: 100%; */
+}
