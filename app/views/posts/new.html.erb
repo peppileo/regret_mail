@@ -9,26 +9,32 @@
 
     <div class="form">
     <%= form_tag("") do %>
-        <div>
+        <div class="input_frame">
             <p>Regretメール作成</p>
         </div>
         
-        <div>
-            <p>宛先：</p>
-            <input name="name" required maxlength="10">
+        <div class="input_frame">
+            <ul class="input_frame_son">
+                <li>宛先：</li>
+                <li class="input"><input name="name" required maxlength="12"></li>
+            </ul>
         </div>
 
-        <div>
-            <span>受信日時：</span>
-            <input type="datetime-local" name="datetime" required>
+        <div class="clear input_frame">
+            <ul class="input_frame_son">
+                <li>受信日時：</li>
+                <li class="input"><input type="datetime-local" name="datetime" required></li>
+            </ul>
         </div>
 
-        <div>
-            <span>件名：</span>
-            <input name="subject" maxlength="10">
+        <div class="clear input_frame">
+            <ul class="input_frame_son">
+                <li>件名：</li>
+                <li class="input"><input name="subject" maxlength="12"></li>
+            </ul>
         </div>
 
-        <div>
+        <div class="clear">
             <textarea name="content"></textarea>
         </div>
     <% end %>
