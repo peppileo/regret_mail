@@ -6,13 +6,13 @@
     margin: 0 0 0 10px;
 }
 
-.new_mail{
-    clear: both;
+.purple{
+    background-color: #d9d2e9ff;
 }
 
 .form input{
     outline: none;
-    /* border: none; */
+    border: none;
     padding: 0;
     width: 100%;
 }
