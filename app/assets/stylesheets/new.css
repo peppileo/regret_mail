@@ -12,9 +12,12 @@
 
 .form input{
     outline: none;
-    /* border: none; */
+    border: none;
     padding: 0;
-    width: 200px;
+}
+
+.width{
+    width: 300px;
 }
 
 .form textarea{
@@ -36,11 +39,14 @@ li{
 .input_frame_son{
     padding: 0;
     margin: 0 0 0 10px;
-    /* display: flex; */
-    /* align-items: center; */
 }
 
 .input_frame{
     border: 1px #000 solid;
     overflow: auto;
+}
+
+.btn input{
+    border: none;
+    background-color: #afafb0;
 }

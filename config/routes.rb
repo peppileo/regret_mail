@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get "/" => "homes#top"
-  get "/new" => "posts#new"
+  get "posts/new" => "posts#new"
+  get "posts/index" => "posts#index"
+  post "posts/create" => "posts#create"
 
 end

@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag 'new', :media => "all" %>
+<%= stylesheet_link_tag 'index', :media => "all" %>
 
 <div class="frame">
 
@@ -7,20 +7,13 @@
         <p class="header_right">充電</p>
     </div>
 
-<%= form_tag("/posts/create") do %>
     <div class="form">
-        <div class="input_frame purple">
-            <p>Regretメール作成</p>
+    <%= form_tag("") do %>
+        <div class="input_frame red">
+            <p>受信メール</p>
         </div>
         
         <div class="input_frame">
-            <ul class="input_frame_son">
-                <li>宛先：</li>
-                <li class="input"><input class="width" name="name" required maxlength="12"></li>
-            </ul>
-        </div>
-
-        <div class="clear input_frame">
             <ul class="input_frame_son">
                 <li>受信日時：</li>
                 <li class="input"><input type="datetime-local" name="datetime" required></li>
@@ -28,6 +21,13 @@
         </div>
 
         <div class="clear input_frame">
+            <ul class="input_frame_son">
+                <li>差出人：</li>
+                <li class="input"><input class="width" name="name" required maxlength="12"></li>
+            </ul>
+        </div>
+
+        <div class="clear input_frame gray">
             <ul class="input_frame_son">
                 <li>件名：</li>
                 <li class="input"><input class="width" name="subject" maxlength="12"></li>
@@ -37,11 +37,7 @@
         <div class="clear">
             <textarea name="content" required maxlength="100"></textarea>
         </div>
+    <% end %>
     </div>
 
 </div>
-
-    <div class="btn">
-        <input type="submit" value="送信">
-    </div>
-<% end %>
