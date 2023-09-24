@@ -45,8 +45,3 @@ li{
     border: 1px #000 solid;
     overflow: auto;
 }
-
-.btn input{
-    border: none;
-    background-color: #afafb0;
-}

@@ -28,19 +28,27 @@
 
 .btn{
     width: 50%;
+    margin: 0 auto;
+}
+
+.btn a, .submit{
+    width: 100%;
     text-align: center;
     font-size: 1rem;
     background-color: #afafb0;
     border: 2px #000 solid;
     padding: 1rem;
-    margin: 0 auto;
-}
-
-.btn a{
     text-decoration: none;
     color: #000;
+    display: block;
+    transition: all 0.5s;
+    cursor: pointer;
 }
 
+.btn a:hover,
+.submit:hover{
+    background-color: #858484;
+}
 
 .frame{
     border: 1px #000 solid;
