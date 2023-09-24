@@ -1,5 +1,7 @@
 <%= stylesheet_link_tag 'new', :media => "all" %>
 
+<%= form_tag("/posts/create") do %>
+
 <div class="frame">
 
     <div class="header">
@@ -7,7 +9,6 @@
         <p class="header_right">充電</p>
     </div>
 
-<%= form_tag("/posts/create") do %>
     <div class="form">
         <div class="input_frame purple">
             <p>Regretメール作成</p>
