@@ -53,12 +53,15 @@
 .frame{
     border: 1px #000 solid;
     padding: 1rem;
-    margin: 1px;
 }
 
 .header{
     display: flex;
     justify-content: space-between;
+}
+
+.header p{
+    margin-top: 0;
 }
 
 .header_right{
