@@ -22,7 +22,7 @@
             <div class="input_frame">
                 <ul class="input_frame_son">
                     <li>受信日時：</li>
-                    <li class="input"><%= post.datetime %></li>
+                    <li class="input"><%= post.datetime.strftime('%Y/%m/%d %H:%M') %></li>
                 </ul>
             </div>
 
