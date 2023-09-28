@@ -2,7 +2,8 @@
     display: flex;
     text-align: center;
     letter-spacing: 2px;
-    margin-bottom: 1rem;
+    width: 358px;
+    margin: 0 auto 1rem auto;
 }
 
 .explain div{
