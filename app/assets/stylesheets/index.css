@@ -12,15 +12,24 @@
     }
 }
 
-.explain div{
-    border: #000 1px solid;
+.explain1{
+    border: #000 2px solid;
     padding: 0.25rem 0.5rem;
-    background-color: #d9d2e9ff;
+    background-color: rgba(255,255,255,1);
 }
 
 .explain2{
+    border: #000 2px solid;
+    background-color: #d9d2e9ff;
     /* 右に押し出される */
     margin-left: auto;
+}
+
+.explain2 a{
+    padding: 0.25rem 0.5rem;
+    display: block;
+    text-decoration: none;
+    color: #000;
 }
 
 .form{
