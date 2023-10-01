@@ -24,14 +24,39 @@ body{
     background-color: aliceblue;
 }
 
-.frame{
+header{
+    text-align: center;
+    font-size: 3rem;
+    border-radius: 3rem 3rem 0 0;
+    background-color: #afafb0;
+    border-top: 2px #000 solid;
+    border-right: 2px #000 solid;
+    border-left: 2px #000 solid;
+}
+
+header a{
+    text-decoration: none;
+    color: rgba(0,0,0,1);
+    display: block;
+}
+
+footer{
+    text-align: center;
+    font-size: 3rem;
+    border-radius: 0 0 3rem 3rem;
+    background-color: #afafb0;
+    border-bottom: 2px #000 solid;
+    border-right: 2px #000 solid;
+    border-left: 2px #000 solid;
+}
+
+.frame, header, footer{
     margin: 0 25%;
-    background-color: rgba(255,255,255,1);
 }
 
 /* スマホ対応 */
 @media(max-width:768px){
-    .frame{
+    .frame, header, footer{
         margin: 0;
     }
 }
@@ -53,7 +78,7 @@ body{
     display: block;
     transition: all 0.5s;
     cursor: pointer;
-    margin-top: 1rem;
+    margin: 1rem 0;
 }
 
 .btn a:hover,
@@ -62,6 +87,7 @@ body{
 }
 
 .frame{
+    background-color: rgba(255,255,255,1);
     border: 2px #000 solid;
     padding: 1rem;
 }

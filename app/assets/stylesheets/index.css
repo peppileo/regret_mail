@@ -2,13 +2,13 @@
     display: flex;
     text-align: center;
     letter-spacing: 2px;
-    margin: 0 25% 1rem 25%;
+    margin: 1rem 25%;
 }
 
 /* スマホ対応 */
 @media(max-width:768px){
     .explain{
-        margin: 0 auto 1rem auto;
+        margin: 1rem auto;
     }
 }
 
