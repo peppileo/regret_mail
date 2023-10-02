@@ -2,10 +2,11 @@
 
 <div class="explain">
     <div class="explain1">メール一覧</div>
-    <label class="explain2">
-        <%= link_to "投稿が新しい順 ▼", posts_index_path(latest: "true") %>
-        <%# <%= link_to "投稿が古い順", posts_index_path(old: "true") %>
-    </label>
+    <details class="explain2">
+        <summary><%= @summary %></summary>
+        <%= link_to "投稿が新しい順", posts_index_path(latest: "true") %>
+        <%= link_to "投稿が古い順", posts_index_path(old: "true") %>
+    </details>
 </div>
 
 <% @posts.each do |post| %>

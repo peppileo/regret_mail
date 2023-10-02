@@ -8,12 +8,18 @@ class PostsController < ApplicationController
 
 
   def index
+    # 新しい順
     if params[:latest]
       @posts = Post.latest
+      @summary = "投稿が新しい順"
+    # 古い順
     elsif params[:old]
       @posts = Post.old
+      @summary = "投稿が古い順"
     else
+    # デフォルトは新しい順
       @posts = Post.latest
+      @summary = "投稿が新しい順"
     end
   end
 

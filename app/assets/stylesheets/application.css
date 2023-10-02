@@ -24,36 +24,33 @@ body{
     background-color: aliceblue;
 }
 
-header{
-    text-align: center;
-    font-size: 3rem;
-    border-radius: 3rem 3rem 0 0;
-    background-color: #afafb0;
-    border-top: 2px #000 solid;
-    border-right: 2px #000 solid;
-    border-left: 2px #000 solid;
-}
-
 header a{
+    text-align: center;
+    font-size: 2rem;
     text-decoration: none;
     color: rgba(0,0,0,1);
     display: block;
+    padding: 10px 0;
 }
 
-footer{
-    text-align: center;
-    font-size: 3rem;
-    border-radius: 0 0 3rem 3rem;
+header, footer{
     background-color: #afafb0;
-    border-bottom: 2px #000 solid;
     border-right: 2px #000 solid;
     border-left: 2px #000 solid;
+}
+header{
+    border-radius: 3rem 3rem 0 0;
+    border-top: 2px #000 solid;
+}
+footer{
+    border-radius: 0 0 3rem 3rem;
+    border-bottom: 2px #000 solid;
+    height: 73px;
 }
 
 .frame, header, footer{
     margin: 0 25%;
 }
-
 /* スマホ対応 */
 @media(max-width:768px){
     .frame, header, footer{

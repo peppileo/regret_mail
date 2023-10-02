@@ -16,13 +16,17 @@
     border: #000 2px solid;
     padding: 0.25rem 0.5rem;
     background-color: rgba(255,255,255,1);
+    max-height: 40px;
 }
 
 .explain2{
     border: #000 2px solid;
     background-color: #d9d2e9ff;
+    width: 156px;
     /* 右に押し出される */
     margin-left: auto;
+    padding: 5px 0;
+    cursor: pointer;
 }
 
 .explain2 a{
@@ -30,6 +34,7 @@
     display: block;
     text-decoration: none;
     color: #000;
+    background-color: rgba(255,255,255,1);
 }
 
 .form{
