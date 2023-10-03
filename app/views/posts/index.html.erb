@@ -4,8 +4,10 @@
     <div class="explain1">メール一覧</div>
     <details class="explain2">
         <summary><%= @summary %></summary>
-        <%= link_to "投稿が新しい順", posts_index_path(latest: "true") %>
-        <%= link_to "投稿が古い順", posts_index_path(old: "true") %>
+        <%= link_to "投稿が新しい順", posts_index_path(post_new: "true") %>
+        <%= link_to "投稿が古い順", posts_index_path(post_old: "true") %>
+        <%= link_to "受信日時が新しい順", posts_index_path(receive_new: "true") %>
+        <%= link_to "受信日時が古い順", posts_index_path(receive_old: "true") %>
     </details>
 </div>
 
@@ -48,10 +50,34 @@
                 <div class="textarea"><%= post.content %></div>
             </div>
 
+            <!--
+            <div class="clear">
+                <div class="textarea"><%= post.content %><br><%= link_to 'もっと見る', '#', class: 'show-more' %></div>
+            </div>
+            -->
+
         </div>
 
     </div>
 
     <div><br></div>
+
+    <!--
+    <script>
+    // DOMContentLoadedイベントはHTMLの初期文書が完全に読み込まれた時点で発生
+    document.addEventListener('DOMContentLoaded', function() {
+        var textarea = document.querySelector('.textarea');
+        var showMore = document.querySelector('.show-more');
+
+        // クリックしたら動作
+        showMore.addEventListener('click', function(event) {
+            // eventのデフォルト動作を無効化（クリックしてもページ偏移させない）
+            event.preventDefault();
+            // maxHeightを解除
+            textarea.style.maxHeight = 'none';
+        });
+    });
+    </script>
+    -->
 
 <% end %>

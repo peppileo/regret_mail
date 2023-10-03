@@ -8,17 +8,29 @@ class PostsController < ApplicationController
 
 
   def index
-    # 新しい順
-    if params[:latest]
-      @posts = Post.latest
+    # 投稿が新しい順
+    if params[:post_new]
+      @posts = Post.post_new
       @summary = "投稿が新しい順"
-    # 古い順
-    elsif params[:old]
-      @posts = Post.old
+
+    # 投稿が古い順
+    elsif params[:post_old]
+      @posts = Post.post_old
       @summary = "投稿が古い順"
+
+    # 受信日時が新しい順
+    elsif params[:receive_new]
+      @posts = Post.receive_new
+      @summary = "受信日時が新しい順"
+
+    # 受信日時が古い順
+    elsif params[:receive_old]
+      @posts = Post.receive_old
+      @summary = "受信日時が古い順"
+
     else
-    # デフォルトは新しい順
-      @posts = Post.latest
+    # デフォルトは投稿が新しい順
+      @posts = Post.post_new
       @summary = "投稿が新しい順"
     end
   end
