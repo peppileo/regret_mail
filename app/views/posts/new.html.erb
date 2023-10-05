@@ -24,7 +24,7 @@
         <div class="input_frame">
             <label class="input_frame_son">
                 受信日時：
-                <input type="datetime-local" name="datetime" required>
+                <input id="reserve_datetime" type="datetime-local" name="datetime" required>
             </label>
         </div>
 
@@ -48,3 +48,24 @@
 </div>
 
 <% end %>
+
+<script>
+    // 日付取得関数（top.htmlとnew.htmlで使う）
+    function formatDate2() {
+        let dt = new Date();
+
+        var y = dt.getFullYear();
+        var mon = ('00' + (dt.getMonth()+1)).slice(-2); // slice(-2):後ろ2つ取り出す 7月でも07になる!
+        var d = ('00' + dt.getDate()).slice(-2);
+
+        var h   = ('00' + dt.getHours()).slice(-2);
+        var min = ('00' + dt.getMinutes()).slice(-2);
+
+        //今を2023-10-05T22:05形式で（newの受信日時）
+        var reserve_datetime = y + "-" + mon + "-" + d + "T" + h + ":" + min;
+        //受信日時のmax属性に今日の日付をセット=今日より過去にしか設定できないようにする
+        document.getElementById("reserve_datetime").max = reserve_datetime;
+    }
+
+    setInterval("formatDate2()", 1000); 
+</script>

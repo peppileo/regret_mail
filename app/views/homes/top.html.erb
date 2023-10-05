@@ -38,33 +38,29 @@
 </div>
 
 <script>
-    function set2fig(num) {
-        // 桁数が1桁だったら先頭に0を加えて2桁に調整する
-        var ret;
-        if( num < 10 ) { ret = "0" + num; }
-        else { ret = num; }
-        return ret;
-    }
-    function showClock() {
-        var today=new Date(); 
+    // 日付取得関数
+    function formatDate() {
+        let dt = new Date();
 
-        //年・月・日・曜日を取得
-        var year = today.getFullYear();
-        var month = set2fig(today.getMonth()+1);
-        var week = today.getDay();
-        var day = set2fig(today.getDate());
-        //曜日を変換
+        var y = dt.getFullYear();
+        var mon = ('00' + (dt.getMonth()+1)).slice(-2); // slice(-2):後ろ2つ取り出す 7月でも07になる!
+        var d = ('00' + dt.getDate()).slice(-2);
+
+        var week = dt.getDay();
         var week_ja= new Array("日","月","火","水","木","金","土");
 
-        //年・月・日・曜日を書き出す
-        var date = (year+"/"+month+"/"+day+"("+week_ja[week]+")");
-        document.getElementById("top_date").innerHTML = date;
-        // 時刻
-        var nowHour = set2fig( today.getHours() );
-        var nowMin  = set2fig( today.getMinutes() );
-        //var nowSec  = set2fig( today.getSeconds() );
-        var time = nowHour + ":" + nowMin;
-        document.getElementById("top_time").innerHTML = time;
+        var h   = ('00' + dt.getHours()).slice(-2);
+        var min = ('00' + dt.getMinutes()).slice(-2);
+
+        //今を2023/10/05(木)形式で（topの日付）
+        var top_date = y + "/" + mon + "/" + d + "(" + week_ja[week] + ")";
+        document.getElementById("top_date").innerHTML = top_date;
+
+        //今を22:05形式で（topの時刻）
+        var top_time = h + ":" + min;
+        document.getElementById("top_time").innerHTML = top_time;
     }
-        setInterval('showClock()',1000);
+    
+    setInterval("formatDate()", 1000); 
+
 </script>
