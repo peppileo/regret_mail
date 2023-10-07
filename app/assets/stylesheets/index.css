@@ -68,8 +68,8 @@
     font-size: large;
     white-space: pre-wrap;
 
-    /* max-height: 5rem; */
-    /* overflow: hidden; */
+    max-height: 5rem;
+    overflow: hidden;
 }
 
 li{
