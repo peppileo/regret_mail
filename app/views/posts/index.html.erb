@@ -47,7 +47,7 @@
             </div>
 
             <div class="clear">
-                <%= link_to '#', class: 'show-more' do %>
+                <%= link_to 'javascript:void(0);', class: 'show-more'  do %>
                     <div class="textarea"><%= post.content %></div>
                 <% end %>
             </div>
@@ -60,8 +60,6 @@
 
     
     <script>
-    // DOMContentLoadedイベントはHTMLの初期文書が完全に読み込まれた時点で発生
-    document.addEventListener('DOMContentLoaded', function() {
         var textarea = document.querySelector('.textarea');
         // スタイルを取得
         var computedStyle = window.getComputedStyle(textarea);
@@ -69,22 +67,16 @@
         var showMore = document.querySelector('.show-more');
 
         // クリックしたら動作
-        showMore.addEventListener('click', function(event) {
-            // eventのデフォルト動作を無効化（クリックしてもページ偏移させない）
-            event.preventDefault();
-
+        showMore.addEventListener('click', function() {
             // 指定したプロパティが存在するか確認
-            if (computedStyle.getPropertyValue('maxHeight')) {
-                alert("aaa")
+            if (computedStyle.maxHeight == '80px') {
                 textarea.style.maxHeight = 'none';
-            }
-
-            // 小さくする
-            // if(textarea.style.maxHeight == 'none'){
+                console.log("ifの中入った");}
+            // }else if (computedStyle.maxHeight == 'none') {
             //     textarea.style.maxHeight = '5rem';
+            //     console.log("elseの中入った");
             // }
         });
-    });
     </script>
     
 
