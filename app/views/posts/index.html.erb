@@ -47,8 +47,8 @@
             </div>
 
             <div class="clear">
-                <%= link_to 'javascript:void(0);', class: 'show-more'  do %>
-                    <div class="textarea"><%= post.content %></div>
+                <%= link_to 'javascript:void(0);', class: 'show-mores'  do %>
+                    <div class="textarea" id="textarea_<%= post.id %>"><%= post.content %></div>
                 <% end %>
             </div>
 
@@ -57,27 +57,38 @@
     </div>
 
     <div><br></div>
+    
+<% end %>
 
     
     <script>
-        var textarea = document.querySelector('.textarea');
-        // スタイルを取得
-        var computedStyle = window.getComputedStyle(textarea);
-        
-        var showMore = document.querySelector('.show-more');
+        // 全ての要素を取得
+        var showMores = document.querySelectorAll('.show-mores');
 
-        // クリックしたら動作
-        showMore.addEventListener('click', function() {
+        showMores.forEach(function(showMore) {
+            // 既存のクリックイベントリスナーを削除
+            showMore.removeEventListener("click", clickHandler);
+            // 新しいクリックイベントリスナーを追加
+            showMore.addEventListener('click', clickHandler); 
+        });
+
+        // クリックしたら動作する関数
+        function clickHandler(event){
+            // クリックした要素を取得
+            var target = event.target;
+            // スタイルを取得
+            var computedStyle = window.getComputedStyle(target);
+
             // 指定したプロパティが存在するか確認
             if (computedStyle.maxHeight == '80px') {
-                textarea.style.maxHeight = 'none';
-                console.log("ifの中入った");}
-            // }else if (computedStyle.maxHeight == 'none') {
-            //     textarea.style.maxHeight = '5rem';
-            //     console.log("elseの中入った");
-            // }
-        });
+                target.style.maxHeight = 'none';
+                console.log(computedStyle.maxHeight);
+                console.log("ifの中入った");
+            }else{
+                target.style.maxHeight = '5rem';
+                console.log(target.style.maxHeight);
+                console.log("elseの中入った");
+            }
+        };
+        
     </script>
-    
-
-<% end %>
