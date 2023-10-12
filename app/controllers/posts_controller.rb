@@ -1,11 +1,7 @@
 class PostsController < ApplicationController
   def new
+    @submit_success = "no"
   end
-
-  # def index
-  #   @posts = Post.all.order(created_at: :desc)
-  # end
-
 
   def index
     # 投稿が新しい順
@@ -37,7 +33,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(name: params[:name], sub: params[:sub],content: params[:content], datetime: params[:datetime])
-    @post.save
-    redirect_to("/posts/index")
+    # 入力漏れがある場合はポップアップを表示させない
+    if @post.save
+      @submit_success = "ok"
+    end
   end
 end

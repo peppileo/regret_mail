@@ -43,16 +43,25 @@
 
     <div class="btn">
         <input id="submit-show" class="submit" type="submit" value="送信">
+        <input id="submit-success" type="hidden" value="<%= @submit_success %>">
     </div>
 
-    <div class="submit-modal-wrapper" id="submit-modal">
-    <div class="modal">
-        <p>送信中</p>
-        <p>確認</p>
+    <div id="submit-modal" class="submit-modal-wrapper">
+        <div class="modal">
+            <p class="modal-title">メール送信中・・・</p>
+
+            <p class="submit-gage-ratio">40%</p>
+            <div class="submit-gage">
+                <div class="submit-gage-color"></div>
+            </div>
+
+            <div class="btn">
+                <%= link_to "/posts/index" do %>
+                    確認
+                <% end %>
+            </div>
+        </div>
     </div>
-    
-    
-  </div>
 
 </div>
 
@@ -77,11 +86,19 @@
     }
     setInterval("formatDate2()", 1000); 
 
+
     // 送信中ポップアップ
-    document.querySelector('#submit-show').addEventListener('click', clickHandler2);
+    document.querySelector('#submit-show').addEventListener('click', function() {setTimeout(clickHandler2, 1000)});
 
     function clickHandler2() {
-        document.querySelector('#submit-modal').style.display = 'block';
+        var submit_success = document.querySelector('#submit-success').value;
+        console.log("soto" + submit_success);
+        if (submit_success == "ok"){
+            console.log("naka" + submit_success);
+            document.querySelector('#submit-modal').style.display = 'block';
+        }
     };
+
+    // コントローラーで更新された変数を反映させたい→Ajaxを使う
 
 </script>
